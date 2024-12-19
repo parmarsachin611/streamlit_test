@@ -252,7 +252,7 @@ def my_function():
             ])     
             marketplace_review_workbook.save(filename)
 
-    with open(marketplace_review_workbook, mode='rb') as file:
+    with open(filename, mode='rb') as file:
         excel_base64 = base64.b64encode(file.read()).decode('utf-8')
 
     payload = {
