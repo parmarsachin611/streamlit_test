@@ -325,7 +325,7 @@ def weekday_run():
         sku = sku_sheet.cell(row=row,column=1).value
         amz_mark = sku_sheet.cell(row=row,column=3).value
         if amz_mark == 'Y':
-            log_placeholder.write(f"Running SKU : ${asin}")
+            log_placeholder.write(f"Running SKU : {asin}")
             asin = sku_sheet.cell(row=row,column=5).value
             print(f'/// ASIN {asin}')
             #Load asin page
