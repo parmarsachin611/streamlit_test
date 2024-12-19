@@ -416,6 +416,9 @@ def weekday_run():
 
                         rating = int(float(review.find('span', class_='a-icon-alt').text.split(' ')[0]))
                         today = datetime.today()
+                        review_text = review.find('span',{'data-hook':'review-body'}).find('span').text.strip() if review.find('span',{'data-hook':'review-body'}).find('span') else "NA"
+                            review_date_text = review.find('span', {'data-hook': 'review-date'}).text.strip()
+
                         date_match = re.search(r'on (\d{1,2} \w+ \d{4})', review_date_text)
                         date = date_match.group(1) if date_match else None
                         if first_review_date == 101:
@@ -425,9 +428,7 @@ def weekday_run():
 
                             name = review.find('span',{'class':'a-profile-name'}).text.strip()
                             title = review.find('a', {'data-hook': 'review-title'}).find_all('span')[-1].text.strip()
-                            review_text = review.find('span',{'data-hook':'review-body'}).find('span').text.strip() if review.find('span',{'data-hook':'review-body'}).find('span') else "NA"
-                            review_date_text = review.find('span', {'data-hook': 'review-date'}).text.strip()
-
+                            
                             # Use regex to extract location and date
                             location_match = re.search(r'Reviewed in (\w+)', review_date_text)
                             
