@@ -325,6 +325,7 @@ def weekday_run():
         sku = sku_sheet.cell(row=row,column=1).value
         amz_mark = sku_sheet.cell(row=row,column=3).value
         if amz_mark == 'Y':
+            log_placeholder.write(f"Running SKU : ${asin}")
             asin = sku_sheet.cell(row=row,column=5).value
             print(f'/// ASIN {asin}')
             #Load asin page
@@ -490,7 +491,7 @@ def weekday_run():
         "personalizations": [
             {
                 "recipient": "sparmar@godrej.com",
-                "recipient_cc": ["yashkhot@godrej.com", "aarushid@godrej.com"]
+                "recipient_cc": ["parmarsachin707@gmail.com"]
             }
         ],
         "from": {
