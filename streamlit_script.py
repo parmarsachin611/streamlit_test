@@ -259,7 +259,7 @@ def monday_run():
         "personalizations": [
             {
                 "recipient": "sparmar@godrej.com",
-                "recipient_cc": ["yashkhot@godrej.com", "aarushid@godrej.com"]
+                "recipient_cc": ["parmarsachin707@gmail.com"]
             }
         ],
         "from": {
@@ -490,7 +490,7 @@ def weekday_run():
         "personalizations": [
             {
                 "recipient": "sparmar@godrej.com",
-                "recipient_cc": ["yashkhot@godrej.com", "aarushid@godrej.com"]
+                "recipient_cc": ["parmarsachin707@gmail.com"]
             }
         ],
         "from": {
@@ -538,7 +538,7 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("01:10:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:11:00", "%H:%M:%S").time()
     end_time = datetime.strptime("01:13:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
