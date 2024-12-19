@@ -482,6 +482,8 @@ def weekday_run():
                                     break
                             else:
                                 break
+                        else:
+                            break
                
     
     marketplace_review_workbook.save(filename)
@@ -541,8 +543,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("00:06:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("00:25:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("00:36:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("00:59:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         if is_monday:
