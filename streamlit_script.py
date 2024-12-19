@@ -17,10 +17,10 @@ def my_function():
     }
     df = pd.DataFrame(data)
     
-    # excel_filename = "content.xlsx"
-    # df.to_excel(excel_filename, index=False)
+    excel_filename = "content.xlsx"
+    df.to_excel(excel_filename, index=False)
     
-    with open("content.xlsx", mode='rb') as file:
+    with open(excel_filename, mode='rb') as file:
         excel_base64 = base64.b64encode(file.read()).decode('utf-8')
     
     payload = {
