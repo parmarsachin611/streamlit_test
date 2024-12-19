@@ -416,6 +416,7 @@ def weekday_run():
 
                         rating = int(float(review.find('span', class_='a-icon-alt').text.split(' ')[0]))
                         today = datetime.today()
+                        date_match = re.search(r'on (\d{1,2} \w+ \d{4})', review_date_text)
                         date = date_match.group(1) if date_match else None
                         if first_review_date == 101:
                             first_review_date = date
@@ -429,7 +430,7 @@ def weekday_run():
 
                             # Use regex to extract location and date
                             location_match = re.search(r'Reviewed in (\w+)', review_date_text)
-                            date_match = re.search(r'on (\d{1,2} \w+ \d{4})', review_date_text)
+                            
 
                             # Assign to variables if matched
                             location = location_match.group(1) if location_match else None
