@@ -252,7 +252,7 @@ def monday_run():
             ])     
             marketplace_review_workbook.save(filename)
 
-    with open(marketplace_review_workbook, mode='rb') as file:
+    with open(filename, mode='rb') as file:
         excel_base64 = base64.b64encode(file.read()).decode('utf-8')
 
     payload = {
@@ -271,7 +271,7 @@ def monday_run():
         "attachments": [
             {
                 "fileContent": excel_base64,
-                "fileName": "RatingsAndReviews.xlsx"
+                "fileName": filename
             }
         ]
     }
@@ -497,8 +497,8 @@ def weekday_run():
             "fromEmail": "info@godrejinterio.com",
         },
         "subject": "Amazon Ratings and Reviews",
-        "content": "Hi, PFA the Ratings and Reviews Dump for Amazon",
-        "templateId": 33201,
+        "content": " ",
+        "templateId": 59978,
         "attachments": [
             {
                 "fileContent": excel_base64,
@@ -538,8 +538,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("01:11:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("01:13:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:20:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("01:22:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         result = monday_run()
