@@ -17,10 +17,10 @@ def my_function():
     }
     df = pd.DataFrame(data)
     
-    excel_filename = "content.xlsx"
-    df.to_excel(excel_filename, index=False)
+    # excel_filename = "content.xlsx"
+    # df.to_excel(excel_filename, index=False)
     
-    with open(excel_filename, mode='rb') as file:
+    with open("content.xlsx", mode='rb') as file:
         excel_base64 = base64.b64encode(file.read()).decode('utf-8')
     
     payload = {
@@ -73,7 +73,7 @@ while True:
     # Extract time component
     current_time = current_time_ist.time()
     start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("11:55:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("11:58:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
