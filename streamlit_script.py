@@ -260,7 +260,7 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("01:01:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:04:00", "%H:%M:%S").time()
     end_time = datetime.strptime("01:03:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
