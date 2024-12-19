@@ -30,7 +30,7 @@ def monday_run():
     session.cookies.set('ubid-acbin', '262-3136477-5925466', domain='.amazon.in')
     session.cookies.set('x-acbin', 'oKxIUSyFo?JHcckDwUY?v@ZYnayTGSw8@bjN1GChjq0wUS@I8w31mOz?cHcIzdqI', domain='.amazon.in')
 
-    sku_sheet = openpyxl.load_workbook("testSKU.xlsx").active
+    sku_sheet = openpyxl.load_workbook("SKUReviewMaster.xlsx").active
     marketplace_review_workbook = openpyxl.Workbook()
     default_sheet = marketplace_review_workbook.active
     marketplace_review_workbook.remove(default_sheet)
@@ -258,8 +258,8 @@ def monday_run():
     payload = {
         "personalizations": [
             {
-                "recipient": "sparmar@godrej.com",
-                "recipient_cc": ["parmarsachin707@gmail.com"]
+                "recipient": "khushc@godrej.com",
+                "recipient_cc": ["sparmar@godrej.com","yashkhot@godrej.com","aarushid@godrej.com","mrshadab@godrej.com","sskamat@godrej.com"]
             }
         ],
         "from": {
@@ -310,7 +310,7 @@ def weekday_run():
     session.cookies.set('ubid-acbin', '262-3136477-5925466', domain='.amazon.in')
     session.cookies.set('x-acbin', 'oKxIUSyFo?JHcckDwUY?v@ZYnayTGSw8@bjN1GChjq0wUS@I8w31mOz?cHcIzdqI', domain='.amazon.in')
 
-    sku_sheet = openpyxl.load_workbook("testSKU.xlsx").active
+    sku_sheet = openpyxl.load_workbook("SKUReviewMaster.xlsx").active
     marketplace_review_workbook = openpyxl.Workbook()
     default_sheet = marketplace_review_workbook.active
     marketplace_review_workbook.remove(default_sheet)
@@ -497,7 +497,7 @@ def weekday_run():
             "fromEmail": "info@godrejinterio.com",
         },
         "subject": "Amazon Ratings and Reviews",
-        "content": " ",
+        "content": "Please note that the Revise sheet will be shared starting Tuesday",
         "templateId": 59978,
         "attachments": [
             {
@@ -538,8 +538,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("01:20:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("01:22:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:35:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("01:36:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         result = monday_run()
