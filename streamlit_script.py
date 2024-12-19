@@ -77,8 +77,8 @@ log_placeholder = st.empty()
 
 while True:
     current_time = datetime.now().time()
-    start_time = datetime.strptime("00:15:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("00:45:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("11:16:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("11:18:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
