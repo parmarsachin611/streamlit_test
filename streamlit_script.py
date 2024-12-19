@@ -58,7 +58,7 @@ def my_function():
         }
     }
     headers = {
-        "api_key": "<API KEY>",
+        "api_key": " 50b39b265e9b8cca8a264652a27b57ef",
         "Content-Type": "application/json"
     }
     
@@ -77,8 +77,8 @@ log_placeholder = st.empty()
 
 while True:
     current_time = datetime.now().time()
-    start_time = datetime.strptime("11:16:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("11:18:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("11:30:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("11:33:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
