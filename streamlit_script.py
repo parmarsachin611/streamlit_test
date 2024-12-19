@@ -4,9 +4,10 @@ import time
 import requests
 import base64
 import pandas as pd
+import pytz
 
 def my_function():
-    return f"Function executed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    
     url = "https://netgate.pepipost.com:8080/v1/mail/send"
  
     data = {
@@ -63,7 +64,14 @@ status_placeholder = st.empty()
 log_placeholder = st.empty()
 
 while True:
-    current_time = datetime.now().time()
+    # Get current time in UTC
+    current_time_utc = datetime.now(pytz.utc)
+
+    # Convert to IST
+    current_time_ist = current_time_utc.astimezone(pytz.timezone('Asia/Kolkata'))
+
+    # Extract time component
+    current_time = current_time_ist.time()
     start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
     end_time = datetime.strptime("11:30:00", "%H:%M:%S").time()
 
