@@ -73,13 +73,13 @@ while True:
     # Extract time component
     current_time = current_time_ist.time()
     start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("11:58:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("12:58:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
         log_placeholder.write(result)
         status_placeholder.info("Function executed successfully!")
-        time.sleep(60)  # Wait for 60 seconds
+        time.sleep(600)  # Wait for 60 seconds
     else:
         status_placeholder.warning("Waiting for the time range...")
         time.sleep(10)  # Check again in 10 seconds
