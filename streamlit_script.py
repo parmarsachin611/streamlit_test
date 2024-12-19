@@ -79,7 +79,7 @@ while True:
         result = my_function()
         log_placeholder.write(result)
         status_placeholder.info("Function executed successfully!")
-        time.sleep(6000)  # Wait for 60 seconds
+        time.sleep(60)  # Wait for 60 seconds
     else:
         status_placeholder.warning("Waiting for the time range...")
         time.sleep(10)  # Check again in 10 seconds
