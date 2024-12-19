@@ -2,3 +2,5 @@ openpyxl
 requests
 pandas
 streamlit
+fake_useragent
+bs4
