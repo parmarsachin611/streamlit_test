@@ -2,64 +2,51 @@ import streamlit as st
 from datetime import datetime
 import time
 import requests
+import base64
+import pandas as pd
 
 def my_function():
     
     url = "https://netgate.pepipost.com:8080/v1/mail/send"
  
+    data = {
+        "A": [1, 4, 7, 10],
+        "B": [2, 5, 8, 11],
+        "C": [3, 6, 9, 12]
+    }
+    df = pd.DataFrame(data)
+    
+    excel_filename = "content.xlsx"
+    df.to_excel(excel_filename, index=False)
+    
+    with open(excel_filename, mode='rb') as file:
+        excel_base64 = base64.b64encode(file.read()).decode('utf-8')
+    
     payload = {
-        "from": {
-            "email": "lesley.knope@parksnrec.com",
-            "name": "Lesley Knope"
-        },
-        "reply_to": {
-            "email": "ron.swanson@shutthegovernment.com",
-            "name": "Ron Swanson"
-        },
-        "subject": "Tribute to Lil'Sebastian",
-        "content": [
-            {
-                "value": "Andy Dwyer & Mouse Rat will be singing a tribute song for our Lil'Sebastian.",
-                "type": "text/plain"
-            }
-        ],
         "personalizations": [
             {
-                "to": {
-                    "email": "april.ludgate@parksnrec.com",
-                    "name": "April Ludgate"
-                },
-                "cc": {
-                    "email": "ann.perkins@parksnrec.com",
-                    "name": "Ann Perkins"
-                },
-                "bcc": {
-                    "email": "ben.white@parksnrec.com",
-                    "name": "Ben White"
-                },
-                "subject": "Tribute to Lil'Sebastian"
+                "recipient": "sparmar@godrej.com",
+                "recipient_cc": ["yashkhot@godrej.com", "aarushid@godrej.com"]
             }
         ],
-        "mail_settings": {
-            "bcc": {
-                "enable": True,
-                "email": "rob.lowe@parksnrec.com"
-            },
-            "footer": {
-                "enable": True,
-                "text": "This is a footer",
-                "html": "<p>This is a footer</p>"
-            }
+        "from": {
+            "fromEmail": "info@godrejinterio.com",
         },
-        "tracking_settings": {
-            "click_tracking": { "enabled": True },
-            "open_tracking": { "enabled": True },
-            "subscription_tracking": { "enabled": True }
-        }
+        "subject": "Amazon Ratings and Reviews",
+        "content": "Hi, PFA the Ratings and Reviews Dump for Amazon",
+        "templateId": 33201,
+        "attachments": [
+            {
+                "fileContent": excel_base64,
+                "fileName": "RatingsAndReviews.xlsx"
+            }
+        ]
     }
+    
     headers = {
-        "api_key": " 50b39b265e9b8cca8a264652a27b57ef",
-        "Content-Type": "application/json"
+        "api_key": "50b39b265e9b8cca8a264652a27b57ef",
+        "Content-Type": "application/json",
+        "Accept": ""
     }
     
     response = requests.post(url, json=payload, headers=headers)
@@ -77,8 +64,8 @@ log_placeholder = st.empty()
 
 while True:
     current_time = datetime.now().time()
-    start_time = datetime.strptime("11:30:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("11:33:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("11:24:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
