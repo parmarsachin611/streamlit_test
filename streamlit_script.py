@@ -8,7 +8,7 @@ import pytz
 
 def my_function():
     
-    url = "https://netgate.pepipost.com:8080/v1/mail/send"
+    url = "https://api.pepipost.com/v2/sendEmail"
  
     data = {
         "A": [1, 4, 7, 10],
