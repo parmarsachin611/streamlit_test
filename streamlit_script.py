@@ -538,8 +538,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("01:35:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("01:36:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:37:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("01:38:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         result = monday_run()
@@ -548,4 +548,4 @@ while True:
         time.sleep(1000)
     else:
         status_placeholder.warning("Waiting for the time range...")
-        time.sleep(10)  # Check again in 10 seconds
+        time.sleep(100)  # Check again in 10 seconds
