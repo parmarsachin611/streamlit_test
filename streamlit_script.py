@@ -73,7 +73,7 @@ while True:
     # Extract time component
     current_time = current_time_ist.time()
     start_time = datetime.strptime("12:22:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("13:58:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("13:38:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
