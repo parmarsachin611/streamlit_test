@@ -30,7 +30,7 @@ def monday_run():
     session.cookies.set('ubid-acbin', '262-3136477-5925466', domain='.amazon.in')
     session.cookies.set('x-acbin', 'oKxIUSyFo?JHcckDwUY?v@ZYnayTGSw8@bjN1GChjq0wUS@I8w31mOz?cHcIzdqI', domain='.amazon.in')
 
-    sku_sheet = openpyxl.load_workbook("SKUReviewMaster.xlsx").active
+    sku_sheet = openpyxl.load_workbook("testSKU.xlsx").active
     marketplace_review_workbook = openpyxl.Workbook()
     default_sheet = marketplace_review_workbook.active
     marketplace_review_workbook.remove(default_sheet)
@@ -310,7 +310,7 @@ def weekday_run():
     session.cookies.set('ubid-acbin', '262-3136477-5925466', domain='.amazon.in')
     session.cookies.set('x-acbin', 'oKxIUSyFo?JHcckDwUY?v@ZYnayTGSw8@bjN1GChjq0wUS@I8w31mOz?cHcIzdqI', domain='.amazon.in')
 
-    sku_sheet = openpyxl.load_workbook("SKUReviewMaster.xlsx").active
+    sku_sheet = openpyxl.load_workbook("testSKU.xlsx").active
     marketplace_review_workbook = openpyxl.Workbook()
     default_sheet = marketplace_review_workbook.active
     marketplace_review_workbook.remove(default_sheet)
@@ -538,8 +538,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("19:20:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("19:40:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("21:48:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("21:55:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         if is_monday:
