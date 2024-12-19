@@ -35,7 +35,7 @@ def my_function():
         },
         "subject": "Amazon Ratings and Reviews",
         "content": "Hi, PFA the Ratings and Reviews Dump for Amazon",
-        "templateId": 33201,
+        "templateId": 59978,
         "attachments": [
             {
                 "fileContent": excel_base64,
@@ -72,8 +72,8 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("12:58:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("12:22:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("13:58:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
