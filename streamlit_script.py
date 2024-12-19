@@ -6,7 +6,7 @@ import base64
 import pandas as pd
 
 def my_function():
-    
+    return f"Function executed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     url = "https://netgate.pepipost.com:8080/v1/mail/send"
  
     data = {
@@ -65,7 +65,7 @@ log_placeholder = st.empty()
 while True:
     current_time = datetime.now().time()
     start_time = datetime.strptime("11:22:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("11:24:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("11:30:00", "%H:%M:%S").time()
 
     if start_time <= current_time <= end_time:
         result = my_function()
