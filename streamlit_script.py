@@ -50,7 +50,7 @@ def weekday_run():
             print(f'/// ASIN {asin}')
             #Load asin page
             url_dp = f'https://www.amazon.in/dp/{asin}'
-            print(f'Load {url}...')
+            print(f'Load {url_dp}...')
             response = session.get(url_dp, headers=headers, verify=False)
             headers['Referer'] = url_dp #save url as referrer for next query
             print(response)
@@ -260,14 +260,14 @@ while True:
 
     # Extract time component
     current_time = current_time_ist.time()
-    start_time = datetime.strptime("00:56:00", "%H:%M:%S").time()
-    end_time = datetime.strptime("00:57:00", "%H:%M:%S").time()
+    start_time = datetime.strptime("01:01:00", "%H:%M:%S").time()
+    end_time = datetime.strptime("01:03:00", "%H:%M:%S").time()
     is_monday = current_time_ist.weekday() == 0 
     if start_time <= current_time <= end_time:
         result = weekday_run()
         log_placeholder.write(result)
         status_placeholder.info("Function executed successfully!")
-        time.sleep(1000)  # Wait for 60 seconds
+        time.sleep(10)  # Wait for 60 seconds
     else:
         status_placeholder.warning("Waiting for the time range...")
-        time.sleep(1000)  # Check again in 10 seconds
+        time.sleep(10)  # Check again in 10 seconds
